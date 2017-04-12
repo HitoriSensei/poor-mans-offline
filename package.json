@@ -3,7 +3,11 @@
   "version": "0.1.2",
   "description": "Boilerplate for ReactJS project with hot code reloading",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch:sw": "webpack --config webpack.config.sw.js --watch",
+    "build": "npm run build:sw && npm run build:app",
+    "build:sw": "webpack --config webpack.config.sw.js",
+    "build:app": "webpack --config webpack.config.app.js"
   },
   "repository": {
     "type": "git",
@@ -28,14 +32,26 @@
   },
   "homepage": "https://github.com/gaearon/react-hot-boilerplate",
   "devDependencies": {
-    "jsx-loader": "^0.12.2",
-    "react-hot-loader": "^1.1.1",
-    "webpack": "^1.4.15",
-    "webpack-dev-server": "1.6.4"
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-preset-react": "*",
+    "babel-preset-stage-0": "*",
+    "css-loader": "*",
+    "jsx-loader": "*",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "style-loader": "*",
+    "webpack": "*",
+    "webpack-dev-server": "*"
   },
   "dependencies": {
-    "css-loader": "^0.9.1",
-    "react": "^0.12.0",
-    "style-loader": "^0.8.2"
+    "babel-preset-react-hmre": "^1.1.1",
+    "localforage": "*",
+    "lodash": "^4.17.4",
+    "react": "*",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "redux": "*",
+    "redux-offline": "*",
+    "uuid": "^3.0.1"
   }
 }
